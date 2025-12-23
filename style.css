@@ -1,0 +1,119 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+.month {
+  background: linear-gradient(145deg, #ffffff, #f0f0ff);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.month h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.day-name {
+  font-weight: bold;
+  background: rgba(0,0,0,0.05);
+  padding: 6px 0;
+  border-radius: 6px;
+}
+
+.date {
+  padding: 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.date:hover {
+  background: #667eea;
+  color: white;
+}
+
+.empty {
+  visibility: hidden;
+}
+.weekend {
+  color: #e74c3c;
+  font-weight: 600;
+}
+#darkToggle {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark .month {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+}
+
+body.dark .day-name {
+  background: rgba(255,255,255,0.1);
+}
+.has-note {
+  background: #f6c90e;
+  color: black;
+  font-weight: bold;
+}
+body.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.dark #calendar {
+  background: linear-gradient(135deg, #232526, #414345);
+}
+body.dark .month {
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+#loader {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2, #89f7fe);
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease infinite;
+  color: white;
+  position: relative;
+}
